@@ -30,6 +30,18 @@ public class AuricTeslaBodyArmor : ModItem
         }
     }
 
+    public override void Load()
+    {
+        if (Main.netMode != NetmodeID.Server)
+            EquipLoader.AddEquipTexture(Mod, Texture + "_Back", EquipType.Back, this);
+    }
+        
+    public override void EquipFrameEffects(Player player, EquipType type)
+    {
+        if (player.body == Item.bodySlot)
+            player.back = (sbyte)EquipLoader.GetEquipSlot(Mod, Name, EquipType.Back);
+    }
+
     public override void UpdateEquip(Player player)
     {
     	CalamityPlayer1Point2 modPlayer = player.GetModPlayer<CalamityPlayer1Point2>();

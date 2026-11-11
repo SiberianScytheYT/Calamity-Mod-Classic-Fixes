@@ -10,10 +10,6 @@ namespace CalamityModClassic1Point2.BiomeManagers
         public override SceneEffectPriority Priority => SceneEffectPriority.Environment;
         public override string BestiaryIcon => "CalamityModClassic1Point2/BiomeManagers/BrimstoneCragsIcon";
         public override string BackgroundPath => "Terraria/Images/MapBG3";
-
-        public override bool IsBiomeActive(Player player)
-        {
-            return CalamityWorld1Point2.calamityTiles > 50;
-        }
+        public override bool IsBiomeActive(Player player) => CalamityWorld1Point2.calamityTiles > 50;
     }
 }

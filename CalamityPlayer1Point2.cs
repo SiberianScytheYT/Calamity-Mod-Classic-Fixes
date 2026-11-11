@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using CalamityModClassic1Point2.BiomeManagers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -363,9 +364,9 @@ namespace CalamityModClassic1Point2
 		
 		public bool auricSet = false;
 		
-		public bool ZoneCalamity = false;
+		public bool ZoneCalamity => Player.InModBiome(ModContent.GetInstance<BrimstoneCragsBiome>());
 		
-		public bool ZoneAstral = false;
+		public bool ZoneAstral => Player.InModBiome(ModContent.GetInstance<AstralMeteorBiome>());
 		
 		public override void Initialize()
 		{
